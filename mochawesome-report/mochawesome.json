@@ -1,0 +1,158 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-06-20T13:52:46.481Z",
+    "end": "2023-06-20T13:52:47.691Z",
+    "duration": 1210,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1a957d3b-8047-4e6f-90c6-167c75c9a65a",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0706d872-6399-4389-aa61-d456713e46bd",
+          "title": "List Users",
+          "fullFile": "C:\\Users\\osa\\Desktop\\studyjam\\tests\\scenarios\\list-user.test.js",
+          "file": "\\tests\\scenarios\\list-user.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should return list of users",
+              "fullTitle": "List Users should return list of users",
+              "timedOut": false,
+              "duration": 192,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const param = getParams(data.LIST_USERS_PARAMS['page']);\n   \nconst response = await reqresApi.list_users(param);\nassert.equal(response.status, 200);\nexpect(response.data).to.be.jsonSchema(schema.VALID_SCHEMA);",
+              "err": {},
+              "uuid": "5488fa3f-79f0-47b4-b5a0-c2fb52aa4a69",
+              "parentUUID": "0706d872-6399-4389-aa61-d456713e46bd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5488fa3f-79f0-47b4-b5a0-c2fb52aa4a69"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 192,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "415d94f6-1e32-4b1e-9d37-9a155b77af89",
+          "title": "Register",
+          "fullFile": "C:\\Users\\osa\\Desktop\\studyjam\\tests\\scenarios\\register.test.js",
+          "file": "\\tests\\scenarios\\register.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should return error when register with invalid email",
+              "fullTitle": "Register should return error when register with invalid email",
+              "timedOut": false,
+              "duration": 559,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await reqresApi.register(data.INVALID_REGISTER);\nassert.equal(response.status, 400 );\nassert.equal(\n  response.data.error,\n  \"Note: Only defined users succeed registration\");",
+              "err": {},
+              "uuid": "e621248c-ab7c-4cef-876e-a7585fed7d85",
+              "parentUUID": "415d94f6-1e32-4b1e-9d37-9a155b77af89",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return valid token when register with valid data",
+              "fullTitle": "Register should return valid token when register with valid data",
+              "timedOut": false,
+              "duration": 448,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await reqresApi.register(data.VALID_REGISTER);\nassert.equal(response.status, 200);\nassert.isString(response.data.token);\nassert.isNotEmpty(response.data.token);\nassert.equal(response.data.id, 4);",
+              "err": {},
+              "uuid": "b069f29d-8815-476f-99a6-246ffcf37e0a",
+              "parentUUID": "415d94f6-1e32-4b1e-9d37-9a155b77af89",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e621248c-ab7c-4cef-876e-a7585fed7d85",
+            "b069f29d-8815-476f-99a6-246ffcf37e0a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1007,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
